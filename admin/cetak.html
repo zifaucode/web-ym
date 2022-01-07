@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Data Nilai Hafalan</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table id="example" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Surat Hafalan</th>
+                        <th>Keterangan</th>
+                        <th>Tanggal</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <?php
+                    $no = 1;
+                    $santri = mysqli_query($conn, "SELECT * FROM nilai_hafalan ORDER BY id_hafalan DESC");
+                    if (mysqli_num_rows($santri) > 0) {
+                        while ($s = mysqli_fetch_array($santri)) {
+    
+                    ?>
+    
+    
+                            <tr>
+                                <td width="40px"><?= $no++ ?></td>
+                                <td><?= $s['id_santri'] ?></td>
+                                <td><?= $s['surat_hafalan'] ?></td>
+                                <td><?= $s['keterangan'] ?></td>
+                                <td><?= $s['tangga'] ?></td>
+                                <td width="90px">
+                                    <center> <a href="./admin-edit-santri.php?id_santri=<?= $s['id_santri'] ?>"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button></a>&nbsp;
+    
+                                        <a href="./admin-edit-santri.php?id_santri=<?= $s['id_santri'] ?>"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-file-pdf-o"></i></button></a>
+                                    </center>
+    
+                                </td>
+                            </tr>
+    
+                        <?php }
+                    } else { ?>
+    
+                        <tr>
+                            <td>Data tidak ada</td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+    
+            </table>
+        </div>
+</body>
+</html>
