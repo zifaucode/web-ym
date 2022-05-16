@@ -68,7 +68,8 @@ include('../layoutadm/navbar.php');
                             <td><?= $s['semester'] ?></td>
                             <td><?= $s['raport'] ?></td>
                             <td width="90px">
-                                <center> <a href="../uploads/raport/<?= $s['raport'] ?>"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-download"></i></button></a>
+                                <center> <a href="../uploads/raport/<?= $s['raport'] ?>" target="_blank"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-download"></i></button></a>
+                                    <a href="./admin-hapus-raport.php?id=<?= $s['id'] ?>" onclick="return confirm('Apakah yakin Ingin Menghapus ?')"><button type="button" class="btn  btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
                                 </center>
 
                             </td>

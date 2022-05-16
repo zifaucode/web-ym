@@ -32,6 +32,7 @@ include('../layoutadm/navbar.php');
         }
 
         ?>
+
         <h3 class="box-title">Data Nilai Hafalan</h3>
     </div>
     <!-- /.box-header -->
@@ -71,6 +72,7 @@ include('../layoutadm/navbar.php');
                             <td><?= $s['tanggal'] ?></td>
                             <td width="90px">
                                 <center> <a href="./admin-edit-hafalan.php?id_hafalan=<?= $s['id_hafalan'] ?>"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></button></a>&nbsp;
+                                    <a href="./admin-hapus-hafalan.php?id_hafalan=<?= $s['id_hafalan'] ?>" onclick="return confirm('Apakah yakin Ingin Menghapus ?')"><button type="button" class="btn  btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
                                 </center>
 
                             </td>
