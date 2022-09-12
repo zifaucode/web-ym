@@ -77,8 +77,15 @@ include('../layoutadm/navbar.php');
             </div>
 
             <div class="form-group">
-                <label>Level</label>
-                <input type="text" class="form-control" name="level" placeholder="Level" value="2" disabled>
+                <label>Level Hak Akses</label>
+                <!-- <input type="text" class="form-control" name="level" placeholder="Level" value="2" disabled> -->
+
+
+                <select class="form-control" name="level" disabled>
+                    <option value="2">ORANG TUA</option>
+
+                </select>
+
             </div>
 
 
